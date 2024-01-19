@@ -24,26 +24,14 @@ export default function Layout() {
 
   if (!loaded) return null;
 
-  const BackButton = () => (
-    <Button
-      unstyled
-      flexDirection="row"
-      backgroundColor="transparent"
-      paddingLeft={0}
-      pressStyle={{ opacity: 0.5 }}
-      onPress={router.back}
-      icon={<Feather name="chevron-left" size={16} color="#007AFF" />}>
-      <Text color="#007AFF">Back</Text>
-    </Button>
-  );
 
   return (
-    <TamaguiProvider config={config}>
+    <TamaguiProvider config={config} defaultTheme='orange'>
       <Stack>
-        <Stack.Screen name="index" options={{ title: 'Overview' }} />
+        <Stack.Screen name="index"  />
         <Stack.Screen
           name="details"
-          options={{ title: 'Details', headerLeft: () => <BackButton /> }}
+          options={{ title: 'Details' }}
         />
       </Stack>
     </TamaguiProvider>
